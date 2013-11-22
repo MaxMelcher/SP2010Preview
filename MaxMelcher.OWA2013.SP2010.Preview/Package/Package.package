@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="f6f8df76-26ec-4df7-958e-a2608b405da5" solutionId="f6f8df76-26ec-4df7-958e-a2608b405da5" resetWebServer="false" sharePointProductVersion="15.0" name="MaxMelcher.OWA2013.SP2010.Preview" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <customAssembly location="Microsoft.SharePoint.Client.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Libs\Microsoft.SharePoint.Client.dll" />
+    <customAssembly location="Microsoft.SharePoint.Client.Runtime.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Libs\Microsoft.SharePoint.Client.Runtime.dll" />
+  </assemblies>
+  <projectItems>
+    <projectItemReference itemId="c82c2da6-83ea-47d9-83f3-fd77ea4080c6" />
+  </projectItems>
+</package>
