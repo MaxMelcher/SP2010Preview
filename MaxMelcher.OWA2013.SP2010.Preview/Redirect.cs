@@ -14,7 +14,7 @@ using Microsoft.SharePoint.Utilities;
 
 namespace MaxMelcher.OWA2013.SP2010.Preview
 {
-    public class SP2010Redirect : IHttpHandler
+    public class Redirect : IHttpHandler
     {
         public void ProcessRequest(HttpContext context)
         {
@@ -30,12 +30,17 @@ namespace MaxMelcher.OWA2013.SP2010.Preview
                 login = mgr.DecodeClaim(user.LoginName).Value;
             }
 
+            if (src.StartsWith("file://"))
+            {
+                src = src.Replace("file://", "\\\\").Replace("/", "\\");
+            }
+
             var hash = Helper.GetHash(src, login);
 
             //todo add a time to live to the hash and the redirect url
 
-            const string urlPreviewFormat = "http://sharepoint2013:1234/_vti_bin/sp2010preview.ashx?src={0}&user={1}&hash={2}";
-            string urlPreview = string.Format(urlPreviewFormat, src, HttpUtility.UrlEncode(login), hash);
+            const string urlPreviewFormat = "http://sharepoint2013:1234/_vti_bin/preview.ashx?src={0}&user={1}&hash={2}";
+            string urlPreview = string.Format(urlPreviewFormat, HttpUtility.UrlEncode(src), HttpUtility.UrlEncode(login), hash);
 
             const string owaUrlFormat = "http://owa2013.demo.com/op/embed.aspx?src={0}&action=interactivepreview";
             string owaUrl = string.Format(owaUrlFormat, HttpUtility.UrlEncode(urlPreview));

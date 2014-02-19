@@ -61,16 +61,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helper.cs" />
-    <Compile Include="SP2010Redirect.cs" />
-    <Compile Include="SP2010Preview.cs" />
-    <None Include="ISAPI\SP2010Redirect.ashx" />
+    <Compile Include="Redirect.cs" />
+    <Compile Include="Preview.cs" />
+    <None Include="ISAPI\Redirect.ashx" />
     <None Include="ISAPI\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{c82c2da6-83ea-47d9-83f3-fd77ea4080c6}</SharePointProjectItemId>
     </None>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ISAPI\SP2010Preview.ashx" />
+    <None Include="ISAPI\Preview.ashx" />
     <None Include="key.snk" />
     <None Include="Package\Package.package">
       <PackageId>{f6f8df76-26ec-4df7-958e-a2608b405da5}</PackageId>
